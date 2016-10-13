@@ -1,0 +1,8 @@
+=begin 
+Implement Binary search and linear search in Ruby then benchmark them with an array of a 100 elements. Which one is faster?
+
+[Bonus]: Implement the binary search using recursion. 
+
+=end
+
+

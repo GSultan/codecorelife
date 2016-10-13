@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Largest Number</title>
+  </head>
+  <body>
+    <h1> The Largest Number</h1>
+
+
+    <% if @max_number %>
+      <h2>The largest number is: <%= @max_number %></h2>
+    <% end %>
+    <form action="/" method="post">
+      <input type="text" name="number_list"/>
+      <input type="submit" value="Find Max"/>
+    </form>
+  </body>
+</html>

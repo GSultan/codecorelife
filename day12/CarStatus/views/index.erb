@@ -1,0 +1,34 @@
+<h1>Welcome to my car status diagnostic</h1>
+<p>This tool will help you decide whether it's time to buy a new car</p>
+<!-- <form action="/" method="POST">
+  <label for="">Temperature in &deg;F</label>
+  <input type="text" name="temp_f" value="<%= @temp_f %>">
+  <input type="submit" value="Convert">
+</form>
+
+<p>The temperature of <%= @temp_f %> &deg;F converts to <%= @temp_c %>&deg;C.</p> -->
+
+<form action="/index" method="POST">
+  <!-- <input type="" name="Car Year" value="<%= @year %>"> -->
+  <p>What year is your car?</p>
+  <select name="Car_year">
+      <option value="Very old">Before 1990</option>
+      <option value="Old">1991 to 2010</option>
+      <option value="New">2011 to 2016</option>
+      <option value="Future">2017 and beyond</option>
+  </select>
+    <br><br>
+
+    <!-- <select name="operator">
+    <option <% if @operator == "+" %>selected<% end %>>+</option>
+    <option <% if @operator == "-" %>selected<% end %>>-</option>
+    <option <% if @operator == "*" %>selected<% end %>>*</option>
+    <option <% if @operator == "/" %>selected<% end %>>/</option>
+    <option <% if @operator == "%" %>selected<% end %>>%</option>
+    <option <% if @operator == "**" %>selected<% end %>>**</option>
+    <input type="text" name="number2" value="<%= @number2 %>"> -->
+  <input type="submit" value="Calc Age">
+
+  </form>
+
+<p><%= "Your car is #{@year}, it's probably time to buy a new one" %></p>

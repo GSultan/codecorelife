@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Inline, Block, Inline-Block</title>
+    <style>
+      .box {
+        display: inline-block;
+        /*display: none;*/
+        background-color: white;
+        width: 300px;
+        height: 300px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin: 10px;
+      }
+      .price-tag {
+        height: 20px;
+        width: 45px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        color: grey;
+        font-style: san-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+      <!-- block-level elements -->
+    <p style="background-color:lightblue; width: 100px; height: 100px;">Today was a quiz day with donuts.</p>
+    <p style="background-color:lightblue">I really like donuts.</p>
+    <p style="background-color:lightblue">So does Homer Simpson.</p>
+
+    <!-- inline-level elements -->
+    <span style="background-color: pink; width:100px; height: 100px;">Hello</span>
+    <span style="background-color: pink">My</span>
+    <span style="background-color: pink">Name</span>
+    <span style="background-color: pink">Is</span>
+    <span style="background-color: pink">Jacob</span>
+    <br>
+    <br>
+    <!-- <a>
+    <img> -->
+
+    <!-- inline-block level elements -->
+    <!-- buttons -->
+    <div class="box">
+      <div class="price-tag">$15</div>
+      <div class="photo"><img src="book.jpg" alt=""></div>
+      <span>&#x2729;</span>
+      <span>Sept 27</span>
+      <span><a href="#">JavaScript & jQuery</a></span>
+      <span>$15</span>
+      <span>(Richmond)</span>
+    </div>
+
+    <div>craiglist box 2</div>
+    <div>craiglist box 3</div>
+    <div>craiglist box 4</div>
+    <div>craiglist box 5</div>
+    <div>craiglist box 6</div>
+  </body>
+</html>

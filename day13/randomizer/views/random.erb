@@ -1,0 +1,54 @@
+<h1>Welcome to Team Randomizer</h1>
+
+<form action="/random" method="post">
+    <h2>I allow you, the user, to enter a list of names separated by commas</h2>
+
+  <textarea name="names" id="names" rows="2" cols="100"></textarea>
+
+  <h2>I allow you to enter a positive number</h2>
+  <input type="number" min=0 name="number">
+  <input type="submit" value="Submit">
+</form>
+
+<% if @teams %>
+<% @teams.each_with_index { |val, index| %>
+<p><%= "Team number #{index+1} has the following players: #{val}"  %></p>
+<% } #endif
+    end %>
+</div>
+ <!-- <p><%= @teamsize %></p>
+<p>You chose to let your number represent the: <%= session[:option] %>.</p>
+<p><%= @roster %></p>
+<p>The team size is <%= @teamsize %>player/s per team.</p> -->
+
+
+<!-- # Write a Sinatra app that allows the user to enter a list of names separated by commas and enter the number of teams. Upon hitting "submit" the app should display teams with random members in each of even numbers. If the total number of names to choose from is odd, one team may have one fewer member.
+
+puts "Please enter team member names separated by commas"
+names = gets.chomp.split(',').shuffle # let's say a,b,c,d,e,f
+puts "How many teams do you want to form from these members?"
+teams = gets.chomp.to_i #let's say 6
+#
+if names%2==0
+teamsize = names.length / teams
+# else
+# teamsize
+#    #1
+roster = []
+
+for i in 1..teams
+team = []
+  teamsize.times do
+    team << names.pop
+  end
+roster << team
+end
+# p roster.split
+count = 1
+while roster.length > 0 do
+  p "Team number: #{count}"
+  puts roster.pop
+  count+=1
+end
+
+#however many teams they want , go through and create that many empty arrays , and then shovel into those empty arrays the total names / number of teams -->

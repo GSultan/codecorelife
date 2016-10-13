@@ -1,0 +1,9 @@
+<h1>Welcome to Cohort 15's Temperature Converter</h1>
+<p>This tool will convert any temperature from Farenheit to Celsius</p>
+<form action="/" method="POST">
+  <label for="">Temperature in &deg;F</label>
+  <input type="text" name="temp_f" value="<%= @temp_f %>">
+  <input type="submit" value="Convert">
+</form>
+
+<p>The temperature of <%= @temp_f %> &deg;F converts to <%= @temp_c %>&deg;C.</p>

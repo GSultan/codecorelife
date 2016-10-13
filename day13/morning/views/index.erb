@@ -1,0 +1,41 @@
+<nav>
+  <p>Your favourite language: <%= session[:preferred_language] %></p>
+  <a href='/members'>Sign In</a>
+  |Sign Up|
+  <a href="http://www.wikipedia.org" target="_blank">Wikipedia</a>
+  <p>Your preferred background color: <%= session[:preferred_color] %></p>
+    <p><a href="/color_picker">Change your background color</a></p>
+</nav>
+
+<div class="container">
+  <div class="header">
+    <h1>Coffee Cake</h1>
+  </div>
+  <div class="image-container">
+    <img src="images/coffee_cake.jpg" class="cookie_image">
+  </div>
+  <div class="main-content">
+    <div class="ingredients-container">
+      <h2>Ingredients</h2>
+      <ul class="ingredients">
+        <li>150g caster sugar</li>
+        <li>150g butter or margarine</li>
+        <li>3 eggs</li>
+        <li>150g self raising flour</li>
+        <li>1 1/2 tsp baking powder</li>
+        <li>1 tbsp hot water</li>
+        <li>1 tbsp instant coffee (add more if you like it strong)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div>
+  Hello world
+<%# Please place your recipe card for coffee cake here %>
+</div>
+<%# div is a block, example of block level element, it likes to take up 100% width of the screen
+ %>
+
+<footer><p>The number that has viewed home page is: <%= session[:visitor_counter] %></p></footer>

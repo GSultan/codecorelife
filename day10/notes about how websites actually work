@@ -1,0 +1,6 @@
+enter facebook.com 
+look up the ip address at the DNS server registered with the computer 
+make the request to the ip address , usually at port 80 , it's an http type of request 
+which uses TCP/IP , it's reliable though a bit slower , '
+'
+'

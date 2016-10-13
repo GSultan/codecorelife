@@ -1,0 +1,32 @@
+<h1>Welcome to our grade 1 Calculator</h1>
+<form action="/calc" method="POST">
+  <input type="text" name="number1" value="<%= @number1 %>">
+    <select name="operator">
+    <option <% if @operator == "+" %>selected<% end %>>+</option>
+    <option <% if @operator == "-" %>selected<% end %>>-</option>
+    <option <% if @operator == "*" %>selected<% end %>>*</option>
+    <option <% if @operator == "/" %>selected<% end %>>/</option>
+    <option <% if @operator == "%" %>selected<% end %>>%</option>
+    <option <% if @operator == "**" %>selected<% end %>>**</option>
+    <!-- <% if @operator == "+" %>
+      <option selected>+</option>
+      <option>-</option>
+      <option>*</option>
+      <option>/</option>
+      <option>%</option>
+    <% elsif @operator == "-" %>
+      <option selected>-</option>
+      <option>+</option>
+      <option>*</option>
+      <option>/</option>
+      <option>%</option>
+    <% end %>
+    </select> -->
+  <input type="text" name="number2" value="<%= @number2 %>">
+  <input type="submit" value="Get result">
+
+</form>
+<textarea rows='4' cols="50">
+  <%= $inputs %>
+</textarea>
+<p>The result is: <%= @result %></p>

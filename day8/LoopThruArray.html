@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script type="text/javascript">
+//Write a function called printMulti that takes an array of arrays, such as:
+// var myArray = [[2,3,4], ["Hello CodeCore", 1, true]];
+// and logs every element to the console as follows:
+// > printMulti(myArray)
+// 2
+// 3
+// 4
+// Hello CodeCore
+// 1
+// true
+
+var myArray = [[2,3,4], ["Hello CodeCore", 1, true]];
+
+var printMulti = function(myArray) {
+	// for (var i in myArray) 
+		console.log(myArray.toString().split(",").join("\n"));
+		 //toString to convert array into string 
+		 console.log(myArray.toString())
+		 //2,3,4,Hello CodeCore,1,true
+		 console.log(myArray.toString().split(","))
+		 // [ '2', '3', '4', 'Hello CodeCore', '1', 'true' ] // now it's single dimensional array
+		 console.log(myArray.toString().split(",").join("\n")); 
+		 // 2
+			// 3
+			// 4
+			// Hello CodeCore
+			// 1
+			// true
+		// .join makes it back into a string and inserts a new line after every element	 
+		 
+	}
+
+printMulti(myArray);
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

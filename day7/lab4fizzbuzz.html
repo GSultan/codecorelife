@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<script>
+
+var print = console.log.bind(console);
+//iterate through 1-100 , print fizz if current number divisible by first, buzz if divisible by second , fizzbuzz if divisible by both , else print the current number
+
+// var number1 = parseInt(prompt("Please enter your first number: "));
+// var number2 = parseInt(prompt("Please enter your second number: "));
+
+// for i in 1..100
+// prompt for 2 numbers
+// numbers = numbers.split(/[ ,]+/).sort(function(a,b){return a-b});
+
+
+	for(var i=1;i<=100;i++){ // counter start , the range , and the iteration
+		if(i%3 === 0){
+			document.write("Fizz<br />"); // add a line break after fizz , write to the screen is document.write
+		} 
+		if(i%5 === 0){
+			document.write('Buzz<br />');
+		} 
+		if(i%3 !== 0 && i%5 !== 0) {
+			document.write(i+"<br /");
+		
+	}
+}
+
+</script>
+
+</head>
+
+
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<form action="/randomize" method="POST">
+  Names(seperated by spaces): <input type="textarea" name="teamnames"/>
+  Number of teams: <input type="textarea" name="teamnumber"/>
+  <input type="submit" value="Submit" />
+</form>
+<br />
+<br />
+<!-- <% if @theteams%> -->
+<% @theteams.each_with_index do |name, index| %>
+  <%= "#{index+1}: #{name.join(" ")}" %> <br />
+  <%end%>
+<!-- <%end%> -->

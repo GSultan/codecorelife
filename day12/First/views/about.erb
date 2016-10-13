@@ -1,0 +1,45 @@
+<title>This is a page title!</title>
+<h1>This is the about page for company: <%= @company_name %></h1>
+<h2><%= @company_name %></h2>
+<h3><%= @company_slogan %></h3>
+<h4><%= @company_address %></h4>
+<img src="<%= @company_logo %>">
+
+<%# ebedded ruby %>
+<%= 5 + 5 %>
+<!-- This renders out to the screen -->
+<% 3 * 3 %>
+<!-- This does not render out to the screen  -->
+
+<%# This is an embeded ruby comment  %>
+
+<!-- ctrl + . <%#  %>
+ctrl + shift + . <%=  %>
+ctrl + shift + 3 <%#  %>  -->
+
+<% if true %>
+  <%= "this is true" %><br>
+<% else %>
+  <%= "this is false" %><br>
+<% end %>
+
+<ol>
+<% 10.times do %>
+  <li><%= "this is repeating code"  %></li>
+<% end %>
+</ol>
+
+<!-- <% for i in 0..1000 %>
+  <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." %>
+<% end %> -->
+
+<%# Return all students of cohort 15 %>
+<!-- SELECT * FROM students WHERE class_id = "15" -->
+<% students = Array.new %>
+<% students = ["chris", "Guy"] %>
+
+<ul>
+  <% students.each do |student| %>
+  <li><%= student %></li>
+  <% end %>
+</ul>

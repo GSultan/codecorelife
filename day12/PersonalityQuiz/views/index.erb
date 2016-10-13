@@ -1,0 +1,18 @@
+<h1>The Three Question Personality Test</h1>
+
+<form action="/index" method="post">
+  <div>1. You work best:</div>
+  <input type="radio" name="q1" value="With">With deadlines<br>
+  <input type="radio" name="q1" value="Without"> Without deadlines<br>
+  <div>2. You consider yourself more:</div>
+  <input type="radio" name="q2" value="Rash"> Rational<br>
+  <input type="radio" name="q2" value="Compash"> Compassionate<br>
+  <div>3. You are more interested in:</div>
+  <input type="radio" name="q3" value="Ideas"> Ideas<br>
+  <input type="radio" name="q3" value="Facts"> Facts<br>
+<input type="submit" value="Pray Tell Me Who I Really Am">
+</form>
+
+<p>Your personality type based on your responses of is that of a  "<%= @result %>"</p>
+
+ <!-- "<%= @q1 %>", "<%= @q2 %>", and "<%= @q3 %>" means that you are a  -->

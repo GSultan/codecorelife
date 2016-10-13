@@ -1,0 +1,92 @@
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+	<title>Bigger number</title>
+
+<script>
+
+
+//johhnnyy what if the numbers are the same
+// chris s - are the numbers string
+// what if user doesn't enter anything
+// OFFER TO REWIND , SAVE THE POSITION , 
+var number1 = prompt("please enter first number: ");
+var number2 = prompt("second num: ");
+
+number1 = parseInt(number1);
+number2 = parseInt(number2);
+
+// if (isNaN(number1)) {
+// 	console.log("Number 1 is not a number");
+}
+
+	if (number1>number2) {
+	alert(number1 + " is larger");
+} 	
+	else if (number1 < number2); {
+	alert(number 2 + " is larger");
+}
+	else {
+	alert(number1 + " is equal to" + number2);
+}
+</script>
+</head>
+<body>
+</body>
+</html>
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bigger Number</title>
+    <script>
+      // Assignment: [Demo] Bigger number
+      // Write a Javascript code that prompts the user for two number and alerts the larger of the two number printing: "The larger number is X"
+//       var times = 3;
+// 		for(var i=0; i < times; i++){
+//     	var numberi = prompt("Please enter your first number: ");doSomething();
+// }
+// ######### for the for loop 
+// declare empty array 
+// var numbers = [];
+
+      var number1 = parseInt(prompt("Please enter your first number: "));
+      var number2 = parseInt(prompt("Please enter your second number: "));
+      var number3 = parseInt(prompt("Please enter third number: "));
+///##### for the for loop 
+// for (var i = 0; i <= 2; i++) {
+// 	var number = parseInt(prompt("Please enter a number"));
+// 	numbers.push(number);
+// }
+//#### for the for loop 
+
+      // alternative for loop for user input
+    //  var num * 1; // convert "1" to the number 1 
+
+      // number1 = parseInt(number1);
+      // number2 = parseInt(number2);
+      // number3 = parseInt(number3);
+
+      // johnny - what if the numbers are the same?
+      // chris s - are the numbers string?
+      // what if the user doesn't enter anything, or enters a word?
+      // wire code prompt user 3 numbers return largest , and print the larges "largest is number x"
+      if ( isNaN(number1) || isNaN(number2) || isNaN(number3) ) {
+        console.log("One of your entries was not a number. ");
+      }
+
+      if (number1 > number2 && number1 > number3) {
+        alert("Largest number is" + number1 );
+      } else if (number2 > number3) {
+        alert("Largest number is " + number2 );
+      } else {
+        alert("Largest number is "+ number3);
+      }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

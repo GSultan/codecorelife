@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var text = 'Your name is John Lennon';
+
+      // Declare function named mostRecurring
+      // Find the most occuring letter in string
+      // Takes a string as argument
+      // Returns a single character (the max letter)
+      function mostRecurring (str) {
+        // Initialize variables
+        // counts object will hold pairs letter (as key) and
+        // their frequency (as value)
+        var counts = {};
+        // We initialize maxLetter to the first letter of str
+        var maxLetter = str[0].toLowerCase();
+
+        // for (var i = 0; i < str.length - 1; i++)
+        // shorcut notation for 👆
+        for (var num of str) {
+          // Assign current letter to variable
+          var letter = str[i].toLowerCase();
+
+          // We do not want to track spaces
+          // Ignore spaces
+          if (letter != ' ') {
+            // Tracking letters
+            // We increment the letter count (at the value) in our counts
+            // object or we assign 1 if it doesn't exist
+            counts[letter] = counts[letter] ? counts[letter] + 1 : 1;
+
+            // If the frequency of the current letter is greater
+            // than the frequency if the maxLetter, then assign the current
+            // to the maxLetter
+            if (counts[letter] > counts[maxLetter]) {
+              maxLetter = letter;
+            }
+          }
+
+        }
+        // We're done with the loop
+        // maxLetter should contain the most frequently occuring letter
+        return maxLetter;
+      };
+
+      document.write(
+        'Text:', text, 'Max letter:', mostRecurring(text)
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+def multiply(array)
+
+		if array.size == 0
+			1
+		elsif array[0].is_a? Array
+				multiply(array[0] * multiply(array[1..-1]))
+		else
+			array[0] * multiply(array[1..-1])
+		end
+end
+
+p multiply([1,2,4,3]) #=> 6
+p multiply([]) #=> 1

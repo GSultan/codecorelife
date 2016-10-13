@@ -1,0 +1,25 @@
+<h1>Random Name Picker</h1>
+<!-- create the form
+set method to somme name
+in the routes, post whatever the name is
+and then send it to home # whatever the name is  -->
+<div class="">
+  Please enter some names separated by a comma
+</div>
+<%= form_tag submit_path do %>
+<div class="">
+    <%= label_tag :names %>
+    <%= text_area_tag  :names %>
+</div>
+  <%= submit_tag "Pick a winner" %>
+<% end %>
+
+<% if @winner %>
+<%= "The random winner is #{@winner}" %>
+<% end %>
+<!-- <form action="/home" method="post">
+  <textarea name="names" rows="4" cols="120"></textarea>
+  <div class="">
+
+  </div><input type="button" name="submit" value="Submit">
+</form> -->

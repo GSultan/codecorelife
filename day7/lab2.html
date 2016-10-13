@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+This is a canvas, or a failed rectangle:
+<meta charset=utf-8 />  
+<title>The area of a traingle</title>  
+
+<script>
+//prompt user for length of sides of a trnagle then print out the area of the triangle
+//
+
+var side1 = parseInt(prompt("Please enter triangle side 1: "));   
+var side2 = parseInt(prompt("Please enter triangle side 2: "));
+var side3 = parseInt(prompt("Please enter triangle side 3: "));
+var perimeter = (side1 + side2 + side3)/2;  
+var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));  
+alert(area+ " is the area of the triangle");  
+
+console.log("w00000000t");
+
+// parseInt
+// parseInt
+// parseInt
+
+function drawTriangle(context, x, y, triangleWidth, triangleHeight, fillStyle){
+context.beginPath();<!--from   www. j a  v a  2s  .  c  o  m-->
+context.moveTo(x, y);
+context.lineTo(x + triangleWidth / 2, y + triangleHeight);
+context.lineTo(x - triangleWidth / 2, y + triangleHeight);
+context.closePath();
+context.fillStyle = fillStyle;
+context.fill();
+}
+
+window.onload = function(){
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+
+var grd;
+var triangleWidth = 150;
+var triangleHeight = 150;
+var triangleY = canvas.height / 2 - triangleWidth / 2;
+
+// linear gradient fill (second from left)
+grd = context.createLinearGradient(canvas.width  / 5, triangleY, canvas.width / 5, triangleY + triangleHeight);
+grd.addColorStop(0, "#8ED6FF"); // light blue
+grd.addColorStop(1, "#004CB3"); // dark blue
+drawTriangle(context, canvas.width / 2, triangleY, triangleWidth, triangleHeight, grd);
+
+};
+
+</script>
+</head>
+
+<body>
+<canvas id="myCanvas" width="600" height="250" style="border:1px solid black;">
+</canvas>
+</body>

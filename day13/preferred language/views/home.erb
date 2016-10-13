@@ -1,0 +1,11 @@
+<h1>Welcome Home</h1>
+<% if session[:greeting].nil?  %>
+<h2><%= "Welcome to my amazing webapp" %></h2>
+<% else %>
+<h2><%= session[:greeting] %></h2>
+<% end %>
+
+
+
+<%= @teams.each_with_index { |val, index| }
+ "Team number #{index+1} has the following players: #{val}" } %>

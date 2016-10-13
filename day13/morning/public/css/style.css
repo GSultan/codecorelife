@@ -1,0 +1,34 @@
+body {
+  font-family: "Arial, Helvetica, sans-serif"
+  
+}
+.container {
+  width: 500px;
+  border-radius: 5px;
+  border: 2px solid #CFCFCF;
+  background-color: #EEE;
+}
+.cookie_image {
+  width: 100%;
+}
+.image-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.header {
+  border-bottom: 1px dashed #CFCFCF;
+}
+.header h1 {
+  color: #FF7E00;
+  text-align: center;
+}
+.main-content {
+  border-top: 1px dashed #CFCFCF;
+}
+.ingredients-container {
+  border-radius: 10px;
+  background-color: #FFEBC7;
+  margin: 15px 15px 15px 15px;
+  padding: 15px;
+}
+</style>
