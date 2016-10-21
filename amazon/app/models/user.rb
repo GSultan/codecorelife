@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
     #   title ILIKE ? OR description ILIKE ?", "%#{keyword}%", "%#{keyword}%"])
     #
-    where("first_name": "#{first_name}").where("last_name": "#{last_name}").where("email": "#{email}")
+    where(first_name: "#{first_name}", last_name: "#{last_name}", email: "#{email}")
 
       # + where(["last_name", "%#{last_name}%"] ) + where(["email", "#{email}"])
 

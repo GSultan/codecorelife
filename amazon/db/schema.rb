@@ -10,17 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013022956) do
+ActiveRecord::Schema.define(version: 20161020235238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.float    "price"
+    t.float    "sale_price"
+    t.integer  "hit_count"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.text     "category"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "star_count"
+    t.text     "body"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,4 +59,6 @@ ActiveRecord::Schema.define(version: 20161013022956) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "products", "categories"
+  add_foreign_key "reviews", "products"
 end

@@ -1,0 +1,9 @@
+<h1>INDEX</h1>
+<div><%= link_to 'Add New Product', product_new_path %>
+</div>
+<br>
+<% @products.each do |p| %>
+
+<%= link_to p.title, product_path(p) %>
+<hr />
+<% end %>

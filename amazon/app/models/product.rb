@@ -1,8 +1,15 @@
 class Product < ApplicationRecord
-  validates :title, presence: true, uniqueness: { case_sensitive: false, message: "must be unique"},  :exclusion => {["Apple", "Microsoft", "Sony"]}
-  validates :price, { numericality: {greater_than: 0} }
-  validates :description, presence: true, length: {minimum: 10}
-  validates
+  belongs_to :category
+  has_many :reviews, dependent: :destroy
+  validates :title, presence: true, uniqueness: true
+  { case_sensitive: false, message: "must be unique"}
+  # exclusion: in: { %w(apple microsoft sony), message: "%{value} is reserved."}
+  validates :price, presence: true
+  # uniqueness: {scope: :title}, numericality: {greater_than: 0}
+  # validates :description, presence: true, length: {minimum: 10}
+  validates :sale_price, presence: true,
+  :numericality => {:less_than_or_equal_to => :price}
+  validates :hit_count, numericality: {greater_than_or_equal_to: 0}
 
   # Add a custom methods called `search` to the product model to search for a product with its title or description if it contains a specific word. For instance you should be able to do:
   #
@@ -24,19 +31,35 @@ class Product < ApplicationRecord
     where(["title ILIKE ?", "%#{keyword}%"]) + where(["description ILIKE ?", "%#{keyword}%"] )
   end
 
-  after_initialize :set_defaults
-  before_validation :titleize_title
+  def on_sale?
+    sale_price < price
+  end
 
+  # def increment
+  #   increment(:hit_count, by = 1)
+  # end
+
+
+  after_initialize :set_defaults
+  before_validation :stub_sale_price
+  # before_save :titleize_title
 
   private
+
+  def stub_sale_price
+    self.sale_price ||= self.price
+  end
 
 
   def set_defaults #if you wanna set something in ruby , you have instance variables @viewcount - something , or the other option , if you have attr accessor , you can self.viewcount , that value to something
     #if you wanna set the value of a
-    self.price ||= 1
+    # self.price ||= 1
+
+    self.hit_count ||= 0
   end
 
-  def titleize_title
-    self.title = title.titleize if title.present?
-  end
+  # def titleize_title
+  #   self.title.capitalize!
+  #   #  = title.titleize if title.present?
+  # end
 end

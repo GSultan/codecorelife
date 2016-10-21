@@ -1,0 +1,8 @@
+<h1>INDEX</h1>
+<!-- <%# link_to 'Add New Question', :questions %> -->
+<% @question.each do |p| %>
+
+<%= link_to p.title, question_path(p) %>
+<hr />
+<% end %>
+<%#   :questions(p)%>

@@ -12,13 +12,19 @@
     <nav>
   <!-- <a href='/'>Home</a> -->
   <%= link_to 'Home', home_path %>
+  |
   <!-- ^^ It's advisable to use URL helpers instead of using href's  -->
   <!-- <a href='/contact'>Contact Us</a> -->
   <!-- <%= link_to 'Contact Us', contact_path({something: 'hello world'}) %> -->
   <%= link_to 'Contact Us', contact_path %>
+  |
   <%= link_to 'About Us', about_path %>
+  |
   <%= link_to 'Questions', admin_questions_path %>
+  |
   <%= link_to 'FAQ', faq_path %>
+  |
+  <%= link_to 'Products', products_path %>
   <hr>
 </nav>
     <%= yield %>

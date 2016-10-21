@@ -1,0 +1,58 @@
+<!-- Show page (url :/products/:id) that displays the product details -->
+<h1>Show Product Page</h1>
+<!-- Give it a default view -->
+<div class="">
+<%= "Title: #{@product.title}" %>
+</div>
+<div class="">
+<%= "Category: #{@product.category.name}" %>
+</div>
+<div class="">
+<%= "Description: #{@product.description}" %>
+</div>
+<div class="">
+  <%= "Price: #{number_to_currency(@product.price)}" %>
+</div>
+<div class="">
+  <%= "Sale Price: #{number_to_currency(@product.sale_price)}" %>
+</div>
+<div class="">
+  <%= "Hit count: #{(@product.hit_count)}" %>
+</div>
+
+<%= link_to 'delete', product_path(@product), method: :delete, data: {confirm: 'Are you sure?'} %>
+<br>
+
+
+<%= @review.errors.full_messages.join(', ') %>
+<br>
+<h2>Leave a Review</h2>
+<%= form_for [@product, @review] do |f| %>
+<div class="">
+  <%= f.radio_button :star_count, 1 %> 👍<br>
+  <%= f.radio_button :star_count, 2 %> 👍👍 <br>
+  <%= f.radio_button :star_count, 3 %> 👍👍👍 <br>
+  <%= f.radio_button :star_count, 4 %> 👍👍👍👍 <br>
+  <%= f.radio_button :star_count, 5 %> 👍👍👍👍👍 <br>
+</div>
+<div class="">
+  <%= f.label :Review %>
+  <%= f.text_area :body %>
+</div>
+<%= f.submit %>
+<% end %>
+
+<h2>⭐All Reviews⭐</h2>
+
+<% @product.reviews.each do |review| %>
+<%= review.star_count %>
+<%= review.body %>
+<%= link_to 'delete', product_review_path(@product, review),
+                      method: :delete,
+                      data: { confirm: 'are you sure?'} %>
+<hr>
+<% end %>
+
+
+
+<%#  %>

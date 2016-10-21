@@ -1,0 +1,40 @@
+<h1>New Product Form</h1>
+
+<%= form_for @product do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, @categories, :id, :name, :prompt => "Select a category" %>
+
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :price %>
+    <%= f.text_area :price %>
+  </div>
+
+
+    <%# this will automatically generate a submit button. The label for the button
+      will depend on the `@question` variable. If @question is a new instance
+      then the label of the button will be `Create #{model name capitalized}`.
+      If you're not happy with the label, you can pass the label as a first
+      arguement: f.submit 'Create'  %>
+  <%= f.submit 'Add Product to DB' %>
+<% end %>
+<%# we can use f.label and f.text_field to generate a label/text input group
+    in this case `title` must be an attribute for the variable you pass to
+    form_for which is @question in this case.
+    The label will have a`for` attribute that matches the id of the
+    generated input field for the title.
+    The title input field will have a name attribute that is model_type[field]
+    In the example below the `name` attribute for the input field will be:
+    question[title].
+    The input field will be prepolulated with a value if the @question
+    has that attribute value set to something. %>
